@@ -18,6 +18,8 @@ public class CityController : ControllerBase
         return [5, 6];
     }
 
+    // OTHER REQUESTS: GET, POST, PUT, PATCH (CRUD operations [CRUD = "Create, Read, Update, and Delete" ])
+    // CRUD EQUIVALENCY: READ -> GET, UPDATE -> PATCH
     [HttpGet("{id}")]
     public string Get(int id)
     {
@@ -25,6 +27,7 @@ public class CityController : ControllerBase
         // call backend make database requests using entity
         if(id == 1)
         {
+            // query your database + other logic + entity framework...
             obj.a = [1, 2];
             return JsonConvert.SerializeObject(obj);
         }
